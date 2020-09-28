@@ -343,10 +343,15 @@ const botTol = () => {
   }
 // Menu List
 
+else if (msg.body == "!start") {
+ client.sendMessage(msg.from,  `
+Hi my name is KryPtoN Bot, I made it in javascript,
+to find out my features please type !menu 
+`);
+}
+
 else if (msg.body == "!menu") {
  client.sendMessage(msg.from,  `
-    *SELAMAT DATANG DI KRYPTON BOT*
-
 			  ️*List Menu*
 			
 ➡️ !admin = Menu Khusus Admin Grup🏅
@@ -354,7 +359,6 @@ else if (msg.body == "!menu") {
 ➡️ !menu2 = Downloader Menu🎞
 ➡️ !menu3 = Horoscope Menu 🎇
 ➡️ !menu4 = Edukasi Menu 📕 
-
 `);
 }
 
@@ -373,7 +377,6 @@ else if (msg.body == "!admin") {
  // Menu 1
  else if (msg.body == "!menu1") {
  client.sendMessage(msg.from,  `
- 
    *Welcome To Fun Menu*
    
 *!randomanime* = untuk melihat gambar anime secara random
@@ -399,7 +402,6 @@ contoh ( _*!sesrchimage kata bijak*_ )
  }
 else if (msg.body == "!menu2") {
  client.sendMessage(msg.from,  `
- 
    *Welcome To Downloader Menu*
    
  *!yt url* : Mendownload video dari youtube
@@ -416,7 +418,6 @@ contoh : !ig url
 
 *!pin url* : Mendownload video dari pinterest
 contoh : !pin url
-
 `);
 }
 else if (msg.body == "!menu3") {
@@ -427,7 +428,21 @@ else if (msg.body == "!menu3") {
 *!pasangan* : Check kecocokan jodoh
  contoh : !pasangan Dimas & Dinda
 `);
+}
+
+else if (msg.body == "!menu4") {
+	client.sendMessage (msg.from, `
+*!fakta* : Fakta yang ingin kamu ketahui
+
+*!brainly* : Pertanyaan sekolah yang kamu tidak bisa
+ contoh : !brainly Jelaskan dan sebutkan bla bla..
+
+*!wiki*: Cari apapun di wiki
+
+*!tts*: Mengubah text menjadi mp3
+`);
 }	
+
 // Download Feature
 
 else if (msg.body.startsWith("!ytmp3 ")) {
@@ -597,6 +612,67 @@ fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-20
 	let pjr = tod[Math.floor(Math.random() * tod.length)];
 	msg.reply(pjr);
 	});
+}
+
+else if (msg.body.startsWith("!brainly ")) {
+var hh = msg.body.split("!brainly ")[1]
+var tanya = hh.replace(/ /g, "%20");
+const fetch = require('node-fetch')
+
+const url = "https://tools.aqin.my.id/api/brainly/?q="+ tanya
+var regex = /<br\s*[\/]?>/gi;
+const solution = () => {
+  fetch(url).then(res => res.json()).then((res) => {
+    
+res.data.questionSearch.edges.slice(-2).forEach(item => {
+	var tanyaan = item.node.content
+    item.node.answers.nodes.slice(-2).forEach(item => { 
+ var jawaban = item['content']
+ var g = jawaban.replace(regex, "\n")
+ var h  = g.replace(/<[^>]*>?/gm, '');
+  msg.reply(
+        `     
+      ======================  
+        Pertanyaan : 		
+      *${tanyaan.replace(regex, "\n")}*  
+      
+      Jawaban : 	  
+      *${h}*
+	  ======================
+      `);
+   
+      })
+      console.log("=========")
+    })
+  })
+}
+solution();
+}
+
+else if (msg.body.startsWith("!wiki ")) {
+const cheerio = require('cheerio');
+const request = require('request');
+var yos = msg.body.split("!wiki ")[1]
+var jokowi = yos.replace(/ /g, "%20");
+function foreach(arr, func){
+  for(var i in arr){
+    func(i, arr[i]);
+  }
+}
+var url = "https://id.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles="+ jokowi
+request.get({
+  headers: {'content-type' : 'application/x-www-form-urlencoded'},
+  url:     url,
+},function(error, response, body){
+    let $ = cheerio.load(body);
+    var d = JSON.parse(body);
+var fik = body.split('"extract":"')[1];
+console.log(`
+/////////////
+`)
+msg.reply(fik)
+});
+
 }
 
 // Download Youtube Video
