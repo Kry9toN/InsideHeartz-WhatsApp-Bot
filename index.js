@@ -1,5 +1,7 @@
-// code by InsideHeartz
+// Code by InsideHeartz
 // github.com/fdciabdul
+// Modified by KryPtoN
+// github.com/Kry9toN
 
 const fs = require("fs"); 
 const moment = require("moment");
@@ -23,7 +25,7 @@ if (fs.existsSync(SESSION_FILE_PATH)) {
 client = new Client({	  
     
 	     puppeteer: {
-        executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+        executablePath: '/usr/bin/google-chrome-stable',
         headless: true,
 		args: [
       "--log-level=3", // fatal only
@@ -137,7 +139,7 @@ client.on('group_join', async (notification) => {
     console.log('join', notification);
     const botno = notification.chatId.split('@')[0];
     let number = await notification.id.remote;
-    client.sendMessage(number, `Hai perkenalkan aku Inside Bot, selamat datang di group ini`);
+    client.sendMessage(number, `Hai perkenalkan aku KryPtoN Bot, selamat datang di group ini`);
   
     const chats = await client.getChats();
     for (i in chats) {
@@ -343,12 +345,7 @@ const botTol = () => {
 
 else if (msg.body == "!menu") {
  client.sendMessage(msg.from,  `
-    *SELAMAT DATANG 😎*
-
-
-Join Grup update bot ini , untuk melihat 
-fitur baru serta aktif / tidak nya 
-https://chat.whatsapp.com/CD1DOWJsJXWJvhpY8ud4S5
+    *SELAMAT DATANG DI KRYPTON BOT*
 
 			  ️*List Menu*
 			
@@ -357,9 +354,6 @@ https://chat.whatsapp.com/CD1DOWJsJXWJvhpY8ud4S5
 ➡️ !menu2 = Downloader Menu🎞
 ➡️ !menu3 = Horoscope Menu 🎇
 ➡️ !menu4 = Edukasi Menu 📕 
-
-
-
 
 `);
 }
@@ -485,8 +479,6 @@ Nama : *${data.title}*
 Artis : *${data.artist}*
 
    ----------------------------------
-👾                          👾
-  _Ytmp3 WhatsApp By InsideBot_
 `);
 chat.sendMessage(musik);
 });
@@ -545,8 +537,6 @@ var ehe = `
  🎶 Now Playing 🎶
 
 🔉  *${data.videoTitle}* 
-
-Youtube Play Songs By InsideHeartz :)
 `;
 let media = MessageMedia.fromFilePath('./zerotwo.jpg');
 	client.sendMessage(msg.from, media, {
@@ -575,8 +565,6 @@ request.get({
  Berhasil Mendownload 
  
  Judul = ${b.judul}
- 
- Facebook Downloader By InsideHeartz (*´∇｀*)
  `;
  
 exec('wget "' + b.link + '" -O mp4/fbvid.mp4', (error, stdout, stderr) => {
@@ -671,9 +659,7 @@ request.get({
     let $ = cheerio.load(body);
   var b = JSON.parse(body);
   
-  var teks = ` Download Berhasil 
-  
-  Instagram Downloader By InsideHeartz`;
+  var teks = ` Download Berhasil `;
   if(b.link == false){
 	  msg.reply(" maaf Kak link nya gaada :P ");
   }else if( b.link.indexOf(".jpg") >= 0){
@@ -1030,7 +1016,7 @@ msg.reply(
          Nama _*${nama}*_ ${h}
   ----------------------------------
 
-        *_Arti Nama By InsideHeartz_*
+
 `
         );
 });

@@ -1,22 +1,20 @@
 <h1 align="center">
 
   <br>
-  <a href="https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot"><img src="https://booth.pximg.net/b745d4a2-a7a0-4826-96e8-55e09ebe32f1/i/1280359/5074b2e0-6e4e-41b0-973e-be0e44bb82cd_base_resized.jpg"></a>
-  <br>
-  Inside Heartz WhatsApp Bot
+  KryPtoN WhatsApp Bot
   <br>
 </h1>
 
 <h3 align=center>A multipurpose whatsapp bot built with <a href="https://github.com/pedroslopez/whatsapp-web.js">whatsapp-web.js</a></h3>
 
-For English on here : <a href="https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot/blob/master/README_EN.MD"> English </a>
+For English on here : <a href="https://github.com/Kry9toN/KryPtoN-WhatsApp-Bot/blob/master/README_EN.MD"> English </a>
 <div align=center>
 
 
   <a href="https://github.com/pedroslopez/whatsapp-web.js">
     <img src="https://img.shields.io/badge/whatsapp--web.js-V.1.7%205-green?style=flat&logo=npm" alt="shield.png">
 
-  <a href="https://github.com/fdciabdul">
+  <a href="https://github.com/Kry9toN">
     <img src="https://img.shields.io/badge/license-GNU%20GPL%20v3-green" alt="shield.png">
   </a>
 
@@ -41,8 +39,8 @@ For English on here : <a href="https://github.com/fdciabdul/InsideHeartz-WhatsAp
 Clone project ini
 
 ```bash
-> git clone https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot
-> cd InsideHeartz-WhatsApp-Bot
+> git clone https://github.com/Kry9toN/KryPtoN-WhatsApp-Bot
+> cd KryPtoN-WhatsApp-Bot
 
 ```
 
@@ -69,11 +67,11 @@ C:\ffmpeg\bin
 ```
 
 kalo kelen pengguna linux , jangan lupa ganti path ffmpeg pada fitur youtube mp3 
-jadi `usr/bin/ffmpeg`
+jadi `/usr/bin/ffmpeg`
 
 dan jangan lupa ubah path chrome nya
 jadi 
-`usr/bin/google-chrome-stable`
+`/usr/bin/google-chrome-stable`
 
 ### Usage
 1. menjalankan bot
@@ -87,8 +85,6 @@ di aplikasi whatsapp
 
 ### Fitur 
 ketik !menu untuk menampilkan fitur
-
-<img src="https://github.com/fdciabdul/termux-whatsapp-bot/raw/master/Screenshot_2020_0613_032927.jpg"></img>
 
  Feature  | Status |
 | ------------- | ------------- |
@@ -138,5 +134,13 @@ dan masih banyak lagi
   - `!wiki`: cari apapun di wiki
   - `!tts`: Convert text to voice
 
+Jika ingin menambah fitur silakan pull req atau chat di telegram :
 
+On : <a href="https://t.me/Kry9toN"> Telegram</a>
 
+## Support Me :)
+
+Mohon jangan di jual lagi ya source ini :)
+
+ngopi kuy :P
+<a href="https://saweria.co/donate/Kry9toN"><img width ="100" height="100" src="https://www.pngmart.com/files/7/Donation-Transparent-PNG.png" widht ="350" align="center" height="350"></a>
