@@ -452,7 +452,7 @@ var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:
 const ytdl = require("ytdl-core")
 const { exec } = require("child_process");
 if(videoid != null) {
-   console.log("video id = ",videoid[1]);
+   console.log("[ ${moment().format("HH:mm:ss")} ] video id = ",videoid[1]);
 } else {
     msg.reply("Videonya gavalid gan.");
 }
@@ -461,7 +461,7 @@ if (info.length_seconds > 3000){
 msg.reply("terlalu panjang.. ")
 }else{
 
-console.log(info.length_seconds)
+console.log("[ ${moment().format("HH:mm:ss")} ]", info.length_seconds);
 
 msg.reply(" Tunggu sebentar kak .. Lagi di proses ☺");
 var YoutubeMp3Downloader = require("youtube-mp3-downloader");
@@ -684,7 +684,7 @@ var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:
 
 const ytdl = require("ytdl-core")
 if(videoid != null) {
-   console.log("video id = ",videoid[1]);
+   console.log("[ ${moment().format("HH:mm:ss")} ] video id = ",videoid[1]);
 } else {
     msg.reply("Videonya gavalid gan.");
 }
@@ -694,7 +694,7 @@ if (info.length_seconds > 1000){
 msg.reply("terlalu panjang.. \n sebagai gantinya \n kamu bisa klik link dibawah ini \π \n "+ info.formats[0].url)
 }else{
 
-console.log(info.length_seconds)
+console.log("[ ${moment().format("HH:mm:ss")} ]", info.length_seconds);
 
 function os_func() {
     this.execCommand = function (cmd) {
