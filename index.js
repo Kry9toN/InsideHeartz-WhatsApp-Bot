@@ -139,8 +139,8 @@ client.on('group_join', async (notification) => {
     console.log('join', notification);
     const botno = notification.chatId.split('@')[0];
     let number = await notification.id.remote;
-    client.sendMessage(number, `Hai @${participant.id.user}, selamat datang di group ini
-    semoga betah di sini`);
+    client.sendMessage(number, `Selamat datang di group ini,
+semoga betah di sini, dan jangan lupa bersikap baik dan baca deskripsi`);
   
     const chats = await client.getChats();
     for (i in chats) {
@@ -160,9 +160,9 @@ client.on('group_join', async (notification) => {
         if (participant.isAdmin) {
             //admins.push(participant.id.user);
             admins[contact.pushname] = participant.id.user;
-            client.sendMessage(participant.id._serialized, 'Hai admin, member @${participant.id.user} baru di group mu');
-            const media = MessageMedia.fromFilePath('./test/test.pdf');
-            client.sendMessage(participant.id._serialized, media);
+            client.sendMessage(participant.id._serialized, `Hai admin, member ${participant.id.user} baru di group mu`);
+            //const media = MessageMedia.fromFilePath('./test/test.pdf');
+            //client.sendMessage(participant.id._serialized, media);
         }
     }
     console.log('Group Details');
@@ -177,7 +177,7 @@ client.on('group_leave', async (notification) => {
     console.log('leave', notification);
     const botno = notification.chatId.split('@')[0];
     let number = await notification.id.remote;
-    client.sendMessage(number, `Selamat tinggal bro`);
+    client.sendMessage(number, `Selamat tinggal kuyy!!`);
   
     const chats = await client.getChats();
     for (i in chats) {
@@ -197,9 +197,9 @@ client.on('group_leave', async (notification) => {
         if (participant.isAdmin) {
             //admins.push(participant.id.user);
             admins[contact.pushname] = participant.id.user;
-            client.sendMessage(participant.id._serialized, 'Hai admin, member @${participant.id.user} keluar di group mu');
-            const media = MessageMedia.fromFilePath('./test/test.pdf');
-            client.sendMessage(participant.id._serialized, media);
+            client.sendMessage(participant.id._serialized, `Hai admin, member ${participant.id.user} keluar di group mu`);
+            //const media = MessageMedia.fromFilePath('./test/test.pdf');
+            //client.sendMessage(participant.id._serialized, media);
         }
     }
     console.log('Group Details');
@@ -281,7 +281,7 @@ const botTol = () => {
                 const contact = await msg.getContact();
                 const title = msg.mentionedIds[0]
                 chat.promoteParticipants([`${title}`])
-                chat.sendMessage(`[:] @${title.replace('@c.us', '')} sekarang anda adalah admin sob 🔥`)
+                chat.sendMessage(`@${title.replace('@c.us', '')} sekarang anda adalah admin 🔥`)
             } else {
                 botTol()
             }
@@ -305,7 +305,6 @@ const botTol = () => {
                 let title = msg.body.slice(5)
                 if (title.indexOf('62') == -1) {
                     chat.addParticipants([`${title.replace('0', '62')}@c.us`])
-                    msg.reply(`[:] Selamat datang @${title}! jangan lupa baca Deskripsi group yah 😎👊🏻`)
                 } else {
                     msg.reply('[:] Format nomor harus 0821xxxxxx')
                 }
@@ -346,21 +345,22 @@ if (msg.type == "ciphertext") {
 
 else if (msg.body == "!start") {
  client.sendMessage(msg.from,  `
-Hi my name is KryPtoN Bot, I made it in javascript,
-to find out my features please type !menu 
+Hai saya adalah bot yang bernama *KryPtoN* bot,
+saya dicpitakan dari pemrograman *JAVASCRIPT*,
+ini adalah pencipta saya https://kry9ton.tech,
+jika ingin donasi https://saweria.co/donate/Kry9toN
+untuk melihat fitur bot ini silakan ketik !menu
 `);
 }
 
 else if (msg.body == "!menu") {
  client.sendMessage(msg.from,  `
-			  ️*List Menu*
-			
+			  ️*List Menu*		
 ➡️ !admin = Menu Khusus Admin Grup🏅
 ➡️ !menu1 = Fun Menu 🌞
 ➡️ !menu2 = Downloader Menu🎞
 ➡️ !menu3 = Horoscope Menu 🎇
-➡️ !menu4 = Edukasi Menu 📕 
-`);
+➡️ !menu4 = Edukasi Menu 📕 `);
 }
 
 // Admin Menu 
