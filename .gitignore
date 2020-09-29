@@ -1,2 +1,5 @@
 node_modules/*
 session.json
+mp3/*
+mp4/*
+tts/*
